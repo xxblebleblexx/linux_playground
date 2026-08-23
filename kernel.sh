@@ -1,8 +1,8 @@
 #configuration
-kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=mb-qpr2
-defconfig_path=arch/arm64/configs/gale_defconfig
-defconfig=gale_defconfig
+kernel_source=https://github.com/aosp-mirror/kernel_common.git
+branch_kernel=deprecated/android15-6.6-2024-08
+defconfig_path=arch/arm64/configs/gki_defconfig
+defconfig=gki_defconfig
 
 #Toolchain export
 export PATH=$(pwd)/clang/bin:$PATH
@@ -17,14 +17,5 @@ curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup
 
 #KSU config
 echo "CONFIG_KSU=y" >> $defconfig_path
-
-#manual hook
-echo "CONFIG_KSU_MANUAL_HOOK=y" >> $defconfig_path
-wget https://raw.githubusercontent.com/xxblebleblexx/manual_hook_fix/refs/heads/main/resuki-4.19-cip-st.patch;wait;patch -p1 < resuki-4.19-cip-st.patch
-
-#Nomount driver
-echo "CONFIG_NOMOUNT=y" >> $defconfig_path
-curl -LSs "https://raw.githubusercontent.com/xxblebleblexx/nomount-installer/refs/heads/installer/nomount.sh" | bash -s 4.19
-
 #Run compile
 make O=out ARCH=arm64 $defconfig; printf "n\n2\n\n\n\nY\n" | make -j$(nproc --all) CC=clang O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 LD=ld.lld AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
