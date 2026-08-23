@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup depencies and Toolchain
         run: |
-          curl -LSs "https://raw.githubusercontent.com/${{ github.repository_owner }}/linux_playground/refs/heads/main/toolchain.sh" | bash
+          curl -LSs "https://raw.githubusercontent.com/${{ github.repository_owner }}/linux_playground/refs/heads/${{ github.ref_name }}/toolchain.sh" | bash
       - name: Kernel setup and compile
         run: |
-          curl -LSs "https://raw.githubusercontent.com/${{ github.repository_owner }}/linux_playground/refs/heads/main/kernel.sh" | bash
+          curl -LSs "https://raw.githubusercontent.com/${{ github.repository_owner }}/linux_playground/refs/heads/${{ github.ref_name }}/kernel.sh" | bash
       - name: Upload build artifact
         uses: actions/upload-artifact@v7
         with:
