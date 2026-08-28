@@ -1,6 +1,6 @@
 #configuration
 kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=dev
+branch_kernel=cip
 defconfig_path=arch/arm64/configs/gale_defconfig
 defconfig=gale_defconfig
 
