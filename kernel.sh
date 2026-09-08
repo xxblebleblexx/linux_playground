@@ -1,6 +1,6 @@
 #configuration
 kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=non-mglru
+branch_kernel=gpu
 defconfig_path=arch/arm64/configs/gale_defconfig
 defconfig=gale_defconfig
 
