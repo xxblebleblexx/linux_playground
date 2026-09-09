@@ -20,7 +20,6 @@ echo "CONFIG_KSU=y" >> $defconfig_path
 
 #manual hook
 echo "CONFIG_KSU_MANUAL_HOOK=y" >> $defconfig_path
-wget https://raw.githubusercontent.com/xxblebleblexx/manual_hook_fix/refs/heads/main/resuki-4.19-cip-st.patch;wait;patch -p1 < resuki-4.19-cip-st.patch
 
 #Nomount driver
 echo "CONFIG_NOMOUNT=y" >> $defconfig_path
