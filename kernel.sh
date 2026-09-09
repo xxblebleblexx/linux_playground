@@ -1,8 +1,8 @@
 #configuration
 kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=gpu
-defconfig_path=arch/arm64/configs/gale_defconfig
-defconfig=gale_defconfig
+branch_kernel=compat
+defconfig_path=arch/arm64/configs/moonbeam_defconfig
+defconfig=moonbeam_defconfig
 
 #Toolchain export
 export PATH=$(pwd)/clang/bin:$PATH
