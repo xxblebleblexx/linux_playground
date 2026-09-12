@@ -1,6 +1,6 @@
 #configuration
 kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=compat
+branch_kernel=dev
 defconfig_path=arch/arm64/configs/moonbeam_defconfig
 defconfig=moonbeam_defconfig
 
