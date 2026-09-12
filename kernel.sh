@@ -1,8 +1,8 @@
 #configuration
-kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=compat
-defconfig_path=arch/arm64/configs/moonbeam_defconfig
-defconfig=moonbeam_defconfig
+kernel_source=https://github.com/xxblebleblexx/kernel_xiaomi_mt6893.git
+branch_kernel=lineage-23.2
+defconfig_path=arch/arm64/configs/agate_defconfig
+defconfig=agate_defconfig
 
 #Toolchain export
 export PATH=$(pwd)/clang/bin:$PATH
