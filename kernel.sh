@@ -4,7 +4,7 @@ branch_kernel=common-android15-6.6
 defconfig_path=arch/arm64/configs/gki_defconfig
 #Kernel clone
 repo init -u $kernel_source -b $branch_kernel
-repo sync -c -j$(nproc) --no-tags
+repo sync -c -j$(nproc) --no-tags --no-clone-bundle
 cd common
 
 #disable check_defconfig
