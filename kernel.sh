@@ -15,4 +15,4 @@ echo "CONFIG_KSU=y" >> $defconfig_path
 cd ../
 
 #Run compile
-tools/bazel build --config=fast //common:kernel_aarch64_dist
+tools/bazel run --config=fast //common:kernel_aarch64_dist -- --destdir=out/dist
