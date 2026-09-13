@@ -27,5 +27,5 @@ jobs:
           TG_SENDER_TG_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TG_SENDER_TG_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TG_SENDER_PAYLOAD_MESSAGE: Moonbeam Gale Kernel
-          TG_SENDER_PAYLOAD_FILE_PATH: ${{ github.workspace }}/kernel/out/arch/arm64/boot/Image.gz
+          TG_SENDER_PAYLOAD_FILE_PATH: ${{ github.workspace }}/out/dist/Image.gz
         
