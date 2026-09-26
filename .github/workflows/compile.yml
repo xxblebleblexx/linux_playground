@@ -22,12 +22,9 @@ jobs:
           name: Image.gz
           path: ${{ github.workspace }}/kernel/out/arch/arm64/boot/Image.gz
       - name: Send Via Telegram
-        env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        run: |
-          curl -F chat_id="$TELEGRAM_CHAT_ID" \
-               -F document=@"${{ github.workspace }}/kernel/out/arch/arm64/boot/Image.gz" \
-               -F caption="Moonbeam Gale Kernel" \
-               https://telegram.org
+        uses: appleboy/telegram-action@v1
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message_file: ${{ github.workspace }}/kernel/out/arch/arm64/boot/Image.gz
 
