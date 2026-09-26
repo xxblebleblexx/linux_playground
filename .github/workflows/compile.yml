@@ -26,5 +26,6 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message_file: ${{ github.workspace }}/kernel/out/arch/arm64/boot/Image.gz
+          message: "Moonbeam Gale Kernel"
+          document: "kernel/out/arch/arm64/boot/Image.gz"
 
