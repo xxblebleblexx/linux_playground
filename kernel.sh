@@ -1,6 +1,6 @@
 #configuration
 kernel_source=https://github.com/xxblebleblexx/android_kernel_xiaomi_gale.git
-branch_kernel=dev
+branch_kernel=refactor
 defconfig_path=arch/arm64/configs/moonbeam_defconfig
 defconfig=moonbeam_defconfig
 
@@ -24,11 +24,6 @@ echo "CONFIG_KSU_MANUAL_HOOK=y" >> $defconfig_path
 #Nomount driver
 echo "CONFIG_NOMOUNT=y" >> $defconfig_path
 curl https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
-
-#FAS encore
-echo "CONFIG_UPROBES=y" >> $defconfig_path
-echo "CONFIG_ENCORE_FAS=y" >> $defconfig_path
-curl https://raw.githubusercontent.com/rem01project/encore_fas/refs/heads/main/kernel/scripts/setup.sh | bash -
 
 #Run compile
 make O=out ARCH=arm64 $defconfig; printf "n\n2\n\n\n\nY\n" | make -j$(nproc --all) CC=clang O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 LD=ld.lld AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
