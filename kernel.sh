@@ -12,18 +12,5 @@ export KBUILD_CFLAGS="-mllvm -enable-ml-inliner=release -mllvm -enable-ml-regall
 git clone -b $branch_kernel --depth=1 $kernel_source kernel
 cd kernel
 
-#Resukisu
-curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
-
-#KSU config
-echo "CONFIG_KSU=y" >> $defconfig_path
-
-#manual hook
-echo "CONFIG_KSU_MANUAL_HOOK=y" >> $defconfig_path
-
-#Nomount driver
-echo "CONFIG_NOMOUNT=y" >> $defconfig_path
-curl -LSs "https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh" | bash -
-
 #Run compile
 make O=out ARCH=arm64 $defconfig; printf "n\n2\n\n\n\nY\n" | make -j$(nproc --all) CC=clang O=out ARCH=arm64 LLVM=1 LLVM_IAS=1 LD=ld.lld AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
