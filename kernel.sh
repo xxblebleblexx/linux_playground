@@ -12,8 +12,8 @@ export KBUILD_CFLAGS="-mllvm -enable-ml-inliner=release -mllvm -enable-ml-regall
 git clone -b $branch_kernel --depth=1 $kernel_source kernel
 cd kernel
 
-#Resukisu
-curl -LSs "https://raw.githubusercontent.com/ReSukiSU/ReSukiSU/main/kernel/setup.sh" | bash
+#BakaSU
+curl -LSs "https://raw.githubusercontent.com/Baka-SU/BakaSU/main/kernel/setup.sh" | bash
 
 #KSU config
 echo "CONFIG_KSU=y" >> $defconfig_path
