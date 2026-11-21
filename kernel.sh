@@ -3,8 +3,8 @@ kernel_source=https://android.googlesource.com/kernel/manifest
 branch_kernel=common-android15-6.6-2026-10
 defconfig_path=arch/arm64/configs/gki_defconfig
 #Kernel clone
-repo init -u $kernel_source -b $branch_kernel
-repo sync -c -j$(nproc) --no-tags --no-clone-bundle
+repo init -u $kernel_source -b $branch_kernel --depth=1
+repo sync -c -j4 --no-tags --optimized-fetch --prune
 cd common
 
 #rename
@@ -24,4 +24,4 @@ cd ../
 
 #Run compile
 export KBUILD_CFLAGS="-mllvm -enable-ml-inliner=release -mllvm -enable-ml-regalloc=release"
-tools/bazel run --config=fast --jobs=(nproc) //common:kernel_aarch64_dist -- --destdir=out/dist
+tools/bazel run --config=fast //common:kernel_aarch64_dist -- --destdir=out/dist
