@@ -21,7 +21,8 @@ wget https://github.com/xxblebleblexx/android_kernel_xiaomi_gale_6.6/commit/66dd
 patch -p1 < 66dd340f3170f008d302a1e1a12b0915edf1dd2e.diff
 
 #Fix dirty build
-touch .scmversion
+wget https://github.com/xxblebleblexx/android_kernel_xiaomi_gale_6.6/commit/0b6cada5e347f8bba33a59441d2ca9e297cf2628.diff
+patch -p1 < 0b6cada5e347f8bba33a59441d2ca9e297cf2628.diff
 
 #BakaSU
 curl -LSs "https://raw.githubusercontent.com/Baka-SU/BakaSU/main/kernel/setup.sh" | bash
