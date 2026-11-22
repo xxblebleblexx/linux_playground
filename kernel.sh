@@ -24,10 +24,6 @@ patch -p1 < 66dd340f3170f008d302a1e1a12b0915edf1dd2e.diff
 wget https://github.com/xxblebleblexx/android_kernel_xiaomi_gale_6.6/commit/0b6cada5e347f8bba33a59441d2ca9e297cf2628.diff
 patch -p1 < 0b6cada5e347f8bba33a59441d2ca9e297cf2628.diff
 
-#Nomount driver
-echo "CONFIG_NOMOUNT=y" >> $defconfig_path
-curl https://raw.githubusercontent.com/maxsteeel/nomount/refs/heads/dev/kernel/setup.sh | bash -
-
 #BakaSU
 echo "CONFIG_KSU=y" >> $defconfig_path
 curl -LSs "https://raw.githubusercontent.com/Baka-SU/BakaSU/main/kernel/setup.sh" | bash
