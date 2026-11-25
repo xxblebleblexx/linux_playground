@@ -4,7 +4,7 @@ branch_kernel=common-android15-6.6-2024-08
 defconfig_path=arch/arm64/configs/gki_defconfig
 #Kernel clone
 repo init -u $kernel_source -b $branch_kernel --depth=1
-repo sync -c -j4 --no-tags --optimized-fetch --prune
+repo sync -c -j4 --no-tags --optimized-fetch --prune --fail-fast
 cd common
 
 #rename
