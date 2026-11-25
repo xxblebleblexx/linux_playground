@@ -1,10 +1,12 @@
 #configuration
 kernel_source=https://android.googlesource.com/kernel/manifest
-branch_kernel=common-android15-6.6-2024-08
+branch_kernel=common-android15-6.6
 defconfig_path=arch/arm64/configs/gki_defconfig
 #Kernel clone
 repo init -u $kernel_source -b $branch_kernel --depth=1
-repo sync -c -j4 --no-tags --optimized-fetch --prune --fail-fast
+repo sync -c -j4 --no-tags --optimized-fetch --prune --fail-fast;wait
+rm -rf common;wait
+git clone https://android.googlesource.com/kernel/common -b deprecated/android15-6.6-2024-08 --depth=1
 cd common
 
 #rename
