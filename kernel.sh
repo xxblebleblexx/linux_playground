@@ -33,5 +33,4 @@ cd ../
 
 #Run compile
 export KBUILD_CFLAGS="-mllvm -enable-ml-inliner=release -mllvm -enable-ml-regalloc=release"
-tools/bazel run --config=fast //common:kernel_aarch64_config -- savedefconfig
 tools/bazel run --config=fast //common:kernel_aarch64_dist -- --destdir=out/dist
