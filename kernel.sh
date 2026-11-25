@@ -19,6 +19,7 @@ patch -p1 < b22b72dafed521020549b720bc0d2594843d837e.diff
 
 #Disable ABI protect
 rm -rf android/abi_gki_protected_exports_aarch64
+touch android/abi_gki_protected_exports_aarch64
 wget https://github.com/xxblebleblexx/android_kernel_xiaomi_gale_6.6/commit/66dd340f3170f008d302a1e1a12b0915edf1dd2e.diff
 patch -p1 < 66dd340f3170f008d302a1e1a12b0915edf1dd2e.diff
 
