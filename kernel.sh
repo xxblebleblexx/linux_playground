@@ -1,6 +1,6 @@
 #configuration
 kernel_source=https://android.googlesource.com/kernel/manifest
-branch_kernel=common-android15-6.6-2026-10
+branch_kernel=common-android15-6.6-2024-08
 defconfig_path=arch/arm64/configs/gki_defconfig
 #Kernel clone
 repo init -u $kernel_source -b $branch_kernel --depth=1
